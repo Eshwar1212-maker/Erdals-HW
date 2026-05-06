@@ -73,9 +73,15 @@ Step 6 — If the guess wasn't found anywhere in the word, print "Not in the wor
 Step 7 — Print display again to show the updated board.
 
 Expected output:
+
 _ _ _ _ _
+
 Guess a letter: a
+
 a _ _ _ _
+
 Guess a letter: z
+
 Not in the word.
+
 a _ _ _ _
