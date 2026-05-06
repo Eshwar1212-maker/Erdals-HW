@@ -69,8 +69,6 @@ Guess a letter: z
 Not in the word.
 _ _ _ _ _
 
-## Challenge 5 — Grade Tracker
-
 
 ## Challenge 6 — Grade Tracker
 
