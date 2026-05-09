@@ -1,59 +1,86 @@
 
-## Challenge 6 — Grade Tracker
+## Challenge 1 
 
-Ask the user to enter 5 test scores one by one using a `for i in range()` loop. Print all scores, the average, and whether they passed (average ≥ 60) or failed.
+Ask the user for a number. Use a while loop to count down to 0.
 
-**Expected output:**
-```
-Enter score 1: 80
-Enter score 2: 70
-Enter score 3: 55
-Enter score 4: 90
-Enter score 5: 65
-Scores: [80, 70, 55, 90, 65]
-Average: 72.0
-Result: Passed!
-```
+Expected output:
 
----
+Enter a number: 5
 
-## Challenge 7 — Word Counter
+5
 
-Ask the user to type a sentence. Print the word count, then print each word numbered using `for i, word in enumerate()`.
+4
 
-**Expected output:**
-```
-Enter a sentence: I love coding in Python
-Word count: 5
-1. I
-2. love
-3. coding
-4. in
-5. Python
-```
+3
 
----
+2
 
-## Challenge 8 — Times Table Printer
+1
 
-Ask the user for a number. Print its full times table from 1–10 using `for i in range(1, 11)`.
+Done!
 
-**Expected output:**
-```
-Enter a number: 4
-4 x 1 = 4
-4 x 2 = 8
-4 x 3 = 12
-4 x 4 = 16
-4 x 5 = 20
-4 x 6 = 24
-4 x 7 = 28
-4 x 8 = 32
-4 x 9 = 36
-4 x 10 = 40
-```
+## Challenge 2
 
-## Challenge 9 — Hangman: Guess a Letter 🎯
+Use a while loop to keep asking the user for numbers and add them to a running total. Stop when they type "done" and print the total.
+
+Expected output:
+
+Enter a number (or done): 5
+
+Enter a number (or done): 10
+
+Enter a number (or done): 3
+
+Enter a number (or done): done
+
+Total: 18
+
+## Challenge 3
+
+Challenge 9 — Number Collector
+
+Use a while loop to keep asking the user for numbers. Add each one to a list. Stop when they type "done" and print the full list.
+
+Expected output:
+
+Enter a number (or done): 4
+
+Enter a number (or done): 7
+
+Enter a number (or done): 2
+
+Enter a number (or done): done
+
+Your numbers: [4, 7, 2]
+
+
+## Challenge 4
+
+Ask the user for a word and a letter. Use a for loop with range(len(word)) to check each position. Print every index where the letter was found.
+
+Expected output:
+
+Enter a word: banana
+
+Enter a letter: a
+
+Found at index 1
+
+Found at index 3
+
+Found at index 5
+
+## Challenge 5
+
+Store the word "cat". Create a display list with underscores using ["_"] * len(word). Ask the user for a letter, reveal any matches, then print the updated display.
+
+Expected output:
+
+_ _ _
+Guess a letter: a
+_ a _
+
+## Hangman: Guess a Letter 🎯
 Go back to your hangman.py file
 
 Challenge 5 — Hangman: Guess a Letter 🎯
