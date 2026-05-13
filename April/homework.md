@@ -1,68 +1,73 @@
+## Challenge 1
 
-## Challenge 1 
+Ask the user for a word. Use a for loop with range(len(word)) 
 
-Ask the user for a number. Use a while loop to count down to 0.
+to print each letter and its position number.
 
 Expected output:
 
-Enter a number: 5
+Enter a word: cat
 
-5
+Letter 0 is c
 
-4
+Letter 1 is a
 
-3
-
-2
-
-1
-
-Done!
+Letter 2 is t
 
 ## Challenge 2
 
-Use a while loop to keep asking the user for numbers and add them to a running total. Stop when they type "done" and print the total.
+Ask the user for a word. Use enumerate to print each letter and its position number.
+
+TAKE advantage of the fact enumerate gives you the index and the value of each position. 
 
 Expected output:
 
-Enter a number (or done): 5
+Enter a word: cat
 
-Enter a number (or done): 10
+Letter 0 is c
 
-Enter a number (or done): 3
+Letter 1 is a
 
-Enter a number (or done): done
-
-Total: 18
+Letter 2 is t
 
 ## Challenge 3
+Ask the user for their name and a letter. First check if the 
 
-Challenge 9 — Number Collector
+letter is even in the name using the "in" keyword. If it's not, 
 
-Use a while loop to keep asking the user for numbers. Add each one to a list. Stop when they type "done" and print the full list.
+print "Not found!" and stop. If it is, use a for loop with 
+
+range(len(name)) to print every index where it was found.
+
 
 Expected output:
 
-Enter a number (or done): 4
+Enter your name: Erdal
 
-Enter a number (or done): 7
+Enter a letter: a
 
-Enter a number (or done): 2
+Found at index 3
 
-Enter a number (or done): done
 
-Your numbers: [4, 7, 2]
+Enter your name: Erdal
 
+Enter a letter: z
+
+Not found!
 
 ## Challenge 4
 
-Ask the user for a word and a letter. Use a for loop with range(len(word)) to check each position. Print every index where the letter was found.
+Ask the user for a word. Use a while loop to keep asking them 
+
+to guess a letter. After each guess, print every index where 
+
+that letter was found. Stop when they type "done".
 
 Expected output:
 
 Enter a word: banana
 
-Enter a letter: a
+Guess a letter: a
 
 Found at index 1
 
@@ -70,15 +75,14 @@ Found at index 3
 
 Found at index 5
 
-## Challenge 5
+Guess a letter: b
 
-Store the word "cat". Create a display list with underscores using ["_"] * len(word). Ask the user for a letter, reveal any matches, then print the updated display.
+Found at index 0
 
-Expected output:
+Guess a letter: done
 
-_ _ _
-Guess a letter: a
-_ a _
+Goodbye!
+
 
 ## Hangman: Guess a Letter 🎯
 Go back to your hangman.py file
