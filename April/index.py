@@ -1,9 +1,8 @@
+#nested lists
+
+teams = [["Erdal", "Kemal"], ["Eshwar", "Gelal"]]
 
 
-
-numbers = [1, 2, 3, 4]
-
-for i, el in enumerate(numbers):
-    print(i)
-    print(el)
-    print("-----")
+for player in teams:
+    for p in player:
+        print(p)
