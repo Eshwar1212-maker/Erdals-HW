@@ -1,3 +1,17 @@
+## Intro to Python libraries and shuffle
+Python has extra toolboxes you can bring into your code called libraries. To use one, you write import at the top of your file.
+Today you're using one called random — it helps you do random things like shuffle and pick.
+
+To bring it in, just write this at the very top:
+
+pythonimport random
+
+To shuffle a list, you do:
+
+pythonrandom.shuffle(my_list)
+
+That's it. Now go use it in the challenge.
+
 ## Challenge 1 — Scramble a word
 
 Import random. Ask the user for a word. Use random.shuffle() on a list of its letters and print the scrambled version.
