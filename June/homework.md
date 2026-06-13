@@ -1,51 +1,58 @@
-## Intro to Python libraries and shuffle
-Python has extra toolboxes you can bring into your code called libraries. To use one, you write import at the top of your file.
-Today you're using one called random — it helps you do random things like shuffle and pick.
+# Problem 1 — Your Favorite Foods
 
-To bring it in, just write this at the very top:
+The concept: Making a dictionary and looking things up in it.
 
-pythonimport random
+Step 1 — Create a dictionary called foods that stores at least 4 food names and your rating for each (a number from 1–10).
 
-To shuffle a list, you do:
+foods = {
+    "pizza": 10,
+    "broccoli": 4,
+    ...
+}
+add three more
 
-pythonrandom.shuffle(my_list)
+Step 2 — Ask the user to enter a food name with input().
 
-That's it. Now go use it in the challenge.
+Step 3 — Check if that food is in the dictionary.
 
-## Challenge 1 — Scramble a word
+If it is, print "Rating: " and the number.
 
-Import random. Ask the user for a word. Use random.shuffle() on a list of its letters and print the scrambled version.
-
-Expected output:
-
-Enter a word: python
-
-Scrambled: h t n o y p
-
-## Challenge 2 — Guess the original
-
-Use your code from Challenge 1. After printing the scramble, ask the user to guess the original word. Print "Correct!" or "Wrong, the word was python."
+If it isn't, print "I don't know that food!"
 
 Expected output:
 
-Scrambled: h t n o y p
+Enter a food: pizza
+Rating: 10
 
-Guess the word: typhon
+Enter a food: sushi
+I don't know that food!
 
-Wrong, the word was python.
+#  Problem 2 — Animal Sounds
 
-## Challenge 3 — Keep guessing
+The concept: Looking up a key in a dictionary, then combining two pieces of info into one printed line.
 
-Use your code from Challenge 2. Give the user 3 attempts. Each wrong guess prints "Try again!" and shows attempts remaining. If they get it right, print "You got it!"
+Step 1 — Create a dictionary called animals that stores at least 5 animal names and the sound they make.
+animals = {
+    "dog": "woof",
+    "cat": "meow",
+    ...
+}
+
+Step 2 — Ask the user to enter an animal name.
+
+Step 3 — If the animal is in the dictionary, print a sentence that uses both the animal name and its sound in one line, like:
+A dog says woof!
+
+If it's not in the dictionary, print "Unknown animal!"
 
 Expected output:
 
-Scrambled: h t n o y p
+Enter an animal: cat
 
-Guess the word: nothpy
+A cat says meow!
 
-Wrong! 2 attempts left.
+Enter an animal: dragon
 
-Guess the word: python
+Unknown animal!
 
-You got it!
+Hint: Use an f-string → f"A {name} says {sound}!"
