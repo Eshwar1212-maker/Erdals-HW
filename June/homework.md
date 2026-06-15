@@ -63,6 +63,8 @@ pythonstats = {
     "won": False
 }
 
+Let the user type "quit" to stop the program and then show the stat sheet.
+
 Expected output:
 
 Guess a number (1-100): 50
@@ -76,6 +78,7 @@ Too low!
 Guess a number (1-100): 37
 
 You got it!
+
 
 --- Your Stats ---
 
