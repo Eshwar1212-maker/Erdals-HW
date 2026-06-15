@@ -1,89 +1,29 @@
-#  Problem 1 — Animal Sounds
+# We are now diving into APIs and AI!
 
-The concept: Looking up a key in a dictionary, then combining two pieces of info into one printed line.
+## Read these articles to understand what an API is
 
-Step 1 — Create a dictionary called animals that stores at least 5 animal names and the sound they make.
-animals = {
-    "dog": "woof",
-    "cat": "meow",
-    ...
-}
+https://www.moesif.com/blog/technical/api-development/Python-API-Tutorial/
 
-Step 2 — Ask the user to enter an animal name.
+https://medium.com/@ritapossible/python-api-explained-916f2528d530
 
-Step 3 — If the animal is in the dictionary, print a sentence that uses both the animal name and its sound in one line, like:
-A dog says woof!
+And watch this video
 
-If it's not in the dictionary, print "Unknown animal!"
+https://www.youtube.com/watch?v=hpc5jyVpUpw&t=42s
 
-Expected output:
+## Read this article to understand how to use Open AI's 
 
-Enter an animal: cat
+https://www.datacamp.com/tutorial/guide-to-openai-api-on-tutorial-best-practices
 
-A cat says meow!
+# Your AI Project
 
-Enter an animal: dragon
+## Rock Paper Scissors with Skooby Doo
 
-Unknown animal!
+Build a Python program that lets a user play rock paper scissors with Skooby Do
 
-Hint: Use an f-string → f"A {name} says {sound}!"
+Let a user guess "rock", "paper", or "scissors" and have the AI response also be an option between "rock", "paper", or "scissors".
 
-# Problem 2
+Since the AI response will be from Skooby Do you must tell the AI in the instructions to act like him.
 
-🔥 Challenge 1 — Temperature Converter
+How would you do this? You would use the "input" and "instructions" variable in the "client.responses.create" you see in the documentation
 
-Ask the user to enter a temperature in Celsius. Convert it to Fahrenheit and print the result. Then ask if they want to convert another one. Keep going until they say "no".
-
-Formula: F = (C * 9/5) + 32
-
-Expected output:
-
-Enter temp in Celsius: 100
-
-That is 212.0 degrees Fahrenheit.
-
-Convert another? yes
-
-Enter temp in Celsius: 0
-
-That is 32.0 degrees Fahrenheit.
-
-Convert another? no
-
-Goodbye!
-
-# Problem 3
-
-# Challenge 3 Number Guessing with Stats Tracker
-The computer picks a random number 1–100. The user gets unlimited guesses but you track everything in a dictionary and print a full stats report at the end.
-
-pythonstats = {
-    "guesses": [],
-    "total_attempts": 0,
-    "won": False
-}
-
-Let the user type "quit" to stop the program and then show the stat sheet.
-
-Expected output:
-
-Guess a number (1-100): 50
-
-Too high!
-
-Guess a number (1-100): 25
-
-Too low!
-
-Guess a number (1-100): 37
-
-You got it!
-
-
---- Your Stats ---
-
-Total attempts: 3
-
-Your guesses: [50, 25, 37]
-
-Won: True
+Keep this program running until a user wins or loses. 
