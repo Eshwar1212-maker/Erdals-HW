@@ -51,8 +51,8 @@ Final Score: 2/3
 ```
 trivia_project/
 ├── main.py       # All game logic lives here
-├── .env          # Your OpenAI API key (never share this)
-└── README.md     # This file
+├── .env          # Your OpenAI API key (never share this, you can use the same one you used for the Skooby Doo Project)
+└── project-description.md     # This file
 ```
 
 ---
