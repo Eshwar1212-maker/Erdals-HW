@@ -30,58 +30,36 @@ Keep this program running until a user wins or loses.
 
 # Python Practice Problems
 
-## Word Length Tracker
+## Challenge: Coin Flip Bet 🎰
 
-The computer picks a secret word from a list. The user keeps guessing words and you track everything in a dictionary. Type "quit" to stop and see the stats.
+Start with 100 points. Each round, guess heads or tails AND bet some points. Win the bet if you're right, lose it if you're wrong. Game ends when you quit OR hit 0 points.
 
-stats = {
-    "guesses": [],
-    "total_attempts": 0,
-    "found": False
-}
+Hints:
 
+Use random.choice(["heads", "tails"]) for the flip
 
-Expected output:
-'''
-Guess the word: python
-Too long!
-Guess the word: hi
-Too short!
-Guess the word: cat
-You got it!
+Check if the bet is more than their points — if so, print "You don't have enough points!" and ask again
 
---- Your Stats ---
-Total attempts: 3
-Your guesses: ['python', 'hi', 'cat']
-Found: True
+If points hit 0, end automatically
 
-'''
+Expected Output:
 
-Hint: Use len() to compare word lengths instead of numeric comparisons.
+```
 
-## Coin Flip Streak
-
-The computer flips a coin randomly each round. The user guesses "heads" or "tails". Track their streak and total results in a dictionary. Type "quit" to stop.
-
-stats = {
-    "guesses": [],
-    "correct": 0,
-    "wrong": 0,
-    "longest_streak": 0
-}
-
-Expected output:
-'''
+You have 100 points.
 Heads or tails? heads
-Correct! It was heads.
+How much do you bet? 20
+Correct! You win 20 points.
+
+You have 120 points.
 Heads or tails? tails
-Wrong! It was heads.
+How much do you bet? 50
+Wrong! You lose 50 points.
+
+You have 70 points.
 Heads or tails? quit
 
---- Your Stats ---
-Correct: 1
-Wrong: 1
-Longest streak: 1
-'''
+--- Final Stats ---
+Final points: 70
 
-Hint: Use random.choice(["heads", "tails"]) for the flip.
+```
