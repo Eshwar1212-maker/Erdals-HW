@@ -8,9 +8,7 @@ Step 1: Copy this dictionary into your file:
 
 pythonpowers = { "Spider-Man": "web-slinging", "Thor": "lightning", "Hulk": "super strength" }
 
-Step 2: Print out Thor's power directly using its key.
-
-Step 3: Ask the user for a hero name with input(), then print that hero's power.
+Step 2: Ask the user for a hero name with input(), then print that hero's power.
 
 Expected output:
 
