@@ -1,4 +1,15 @@
-## Challenge 1: Word Frequency Counter 📝
+## Challenge 1 - Environment setup
+
+We just switched environments! Your code is now shared together with Eshwar in the repository, you are now a collaborator. 
+
+However this means if you run your existing Python file in 'Trivia-Project' it will not work because you have to reinstall the virtual environment.
+
+This tasks goal is to reinstall the virtual environment in that folder and get your 'solution.py' File working so you can continue to work on your app.
+
+Use AI ChatGPT/Claude to help you do this.
+ 
+
+## Challenge 2: Word Frequency Counter 📝
 
 Ask the user to type a sentence. Count how many times each word appears and store it in a dictionary. Print the results sorted from most to least frequent.
 
