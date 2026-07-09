@@ -1,13 +1,25 @@
-## Challenge 1 - Environment setup
 
-We just switched environments! Your code is now shared together with Eshwar in the repository, you are now a collaborator. 
+# Challenge 1 — Environment Setup 🛠️
 
-However this means if you run your existing Python file in 'Trivia-Project' it will not work because you have to reinstall the virtual environment.
+We just switched environments! Your code now lives in a shared repository with Eshwar — you are officially a collaborator. 🎉
 
-This tasks goal is to reinstall the virtual environment in that folder and get your 'solution.py' File working so you can continue to work on your app.
+**But there's a catch:** virtual environments (`venv` folders) don't travel with the repository. They only exist on the machine that created them. So when you cloned the repo, your `Trivia-Project` folder came WITHOUT a working virtual environment — which means `solution.py` will crash when you try to run it (missing packages like `openai`, `dotenv`, etc).
 
-Use AI ChatGPT/Claude to help you do this.
- 
+**Your mission:**
+1. Create a brand new virtual environment inside the `Trivia-Project` folder
+2. Activate it
+3. Reinstall the packages your project needs
+4. Get `solution.py` running again
+
+Use AI (ChatGPT/Claude) to help you if you get stuck
+
+You know you're done when: you can run `python solution.py` and the trivia game starts with no errors.
+
+**Hints:**
+- `python -m venv venv` creates a virtual environment
+- Activating it is different on Windows vs Mac — look this up!
+- `pip install openai python-dotenv` gets your packages back
+- Don't forget: does your `.env` file with the API key exist in this folder? `.env` files also don't travel with repos (they're in `.gitignore` on purpose — never push API keys!)
 
 ## Challenge 2: Word Frequency Counter 📝
 
