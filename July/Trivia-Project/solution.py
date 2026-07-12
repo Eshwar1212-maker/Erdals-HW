@@ -57,3 +57,18 @@ or
 WRONG
 """
     )
+
+    decision = judge_response.output_text.strip().upper()
+
+    # 2. Check the verdict and update score
+    if "CORRECT" in decision:
+        print("Correct")
+        score += 1
+    else:
+        print(f"Wrong")
+        
+    print(f"Score: {score}/{i + 1}")
+
+# 3. Print final results after the loop finishes
+print("--- Game Over ---")
+print(f"Final Score: {score}/{rounds}")
