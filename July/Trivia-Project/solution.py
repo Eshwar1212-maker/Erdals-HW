@@ -17,7 +17,7 @@ for i in range(rounds):
 
     print(f"\n--- Round {i + 1} ---")
 
-    # Generate a question
+    
     response = client.responses.create(
         model="gpt-5.5",
         input=f"""
@@ -32,7 +32,7 @@ Answer: ...
 
     output = response.output_text.strip()
 
-    # Split the AI response into question and answer
+    
     lines = output.split("\n")
     question = lines[0].replace("Question:", "").strip()
     answer = lines[1].replace("Answer:", "").strip()
@@ -41,7 +41,7 @@ Answer: ...
 
     user_answer = input("Your answer: ")
 
-    # Judge the answer
+   
     judge_response = client.responses.create(
         model="gpt-5.5",
         input=f"""
@@ -60,7 +60,7 @@ WRONG
 
     decision = judge_response.output_text.strip().upper()
 
-    # 2. Check the verdict and update score
+
     if "CORRECT" in decision:
         print("Correct")
         score += 1
@@ -69,6 +69,6 @@ WRONG
         
     print(f"Score: {score}/{i + 1}")
 
-# 3. Print final results after the loop finishes
+
 print("--- Game Over ---")
 print(f"Final Score: {score}/{rounds}")
