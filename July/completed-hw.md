@@ -1,86 +1,85 @@
-# Python Practice Problems
+# 🔥 ERDAL'S HOMEWORK — LEVEL UP SET
 
-# Question 1
+## Problem 1: Grade Calculator 📊
 
-### Look Up Values in a Dictionary
-
-Step 1: Copy this dictionary into your file:
-
-pythonpowers = { "Spider-Man": "web-slinging", "Thor": "lightning", "Hulk": "super strength" }
-
-Step 2: Ask the user for a hero name with input(), then print that hero's power.
-
-Expected output:
-
-Thor's power is lightning
-
-Enter a hero: Hulk Hulk's power is super strength
-
-
-# Question 2
-
-Build a quiz game. Store 5 questions and answers in a dictionary. Loop through every question, ask the user, and track everything in a stats dictionary.
-
-pythonstats = { "answers_given": [], "correct": 0, "wrong": 0 }
-
-After all 5 questions, print a full report.
-
-Expected output:
-
-What is the capital of France? Paris Correct!
-
-What is 7 x 8? 56 Correct!
-
-What color is the sky? green Wrong! The answer was blue.
-
---- Your Stats --- Total correct: 2 Total wrong: 1 Your answers: ['Paris', '56', 'green']
-
-💡 Hints:
-
-Store questions as keys, answers as values in one dictionary Loop through the dictionary with a for loop Append each user answer to answers_given whether right or wrong Compare .lower() versions so capitalization doesn't matter
-
-# Question 3
-
-```markdown
-# Python Practice Problems
-
-## Challenge: The Number Guessing Gauntlet 🏆
-
-The computer picks a **secret number between 1 and 100**. The player has **7 attempts** to guess it. After each wrong guess, tell them if they're too high or too low AND how many attempts remain. If they guess right, they win. If they run out of guesses, game over — reveal the number.
-
-**But here's the twist:** track a **score** that starts at 700 and drops by 100 each wrong guess. If they win, print their score. If they lose, score is 0.
+Ask the user to enter student names and scores until they type "done". Store everything in a dictionary. Then print each student with their letter grade, plus the class average at the end.
 
 **Hints:**
-- Use `random.randint(1, 100)` to pick the number
-- Use `int(input(...))` to get the guess
-- Use a `while` loop with an attempts counter
+- Use `while True:` with a `break` when input is "done"
+- Use `float()` to convert the score
+- Write a function `get_letter_grade(score)` that returns "A" (90+), "B" (80+), "C" (70+), "D" (60+), or "F"
+- Use `sum(scores.values()) / len(scores)` for the average
 
 **Expected Output:**
+~~~
+Enter student name (or 'done'): Alice
+Enter score for Alice: 92
+Enter student name (or 'done'): Bob
+Enter score for Bob: 74
+Enter student name (or 'done'): Carol
+Enter score for Carol: 85
+Enter student name (or 'done'): done
+--- Report Card ---
+Alice: 92.0 (A)
+Bob: 74.0 (C)
+Carol: 85.0 (B)
+Class average: 83.67
+~~~
 
-​```
-🎯 Guess the secret number (1–100). You have 7 attempts!
+## Problem 2: Letter Frequency Analyzer 🔤
 
-Attempt 1: 50
-Too low! 6 attempts left.
+Ask the user for a word or sentence. Count how many times each LETTER appears (ignore spaces, ignore case). Print the letters sorted from most to least frequent, and print a bar of `*` symbols next to each count.
 
-Attempt 2: 75
-Too high! 5 attempts left.
+**Hints:**
+- Loop through the string with `for char in text:`
+- Skip spaces with `if char == " ": continue`
+- Use `.get(char, 0) + 1` just like the word counter
+- Use `sorted()` with `key=lambda x: x[1], reverse=True`
+- Print the bar with `"*" * count`
 
-Attempt 3: 63
-Too low! 4 attempts left.
+**Expected Output:**
+~~~
+Enter text: hello world
+--- Letter Frequencies ---
+l → 3 ***
+o → 2 **
+h → 1 *
+e → 1 *
+w → 1 *
+r → 1 *
+d → 1 *
+~~~
 
-Attempt 4: 70
-You got it! 🎉
+## Problem 3: Inventory Shop System 🛒
 
---- Results ---
-Score: 400
-​```
+Start with this dictionary:
 
-**If they lose:**
-​```
-Out of attempts! The number was 63.
+~~~python
+inventory = {"sword": 3, "shield": 5, "potion": 10}
+~~~
 
---- Results ---
-Score: 0
-​```
-```
+Let the user type commands in a loop: `buy <item>`, `stock <item>`, `list`, or `quit`. Buying reduces the count by 1 (but not below 0 — print "Out of stock!" instead). `stock` shows the count for one item. `list` shows everything.
+
+**Hints:**
+- Use `.split()` to separate the command from the item name
+- Write a function `buy_item(inventory, item)` and a function `show_inventory(inventory)`
+- Check `if item in inventory:` before doing anything — print "Item not found!" otherwise
+- Use `while True:` and `break` on "quit"
+
+**Expected Output:**
+~~~
+Command: buy sword
+You bought a sword! 2 left.
+Command: buy axe
+Item not found!
+Command: stock potion
+potion: 10 in stock
+Command: buy sword
+You bought a sword! 1 left.
+Command: list
+sword: 1
+shield: 5
+potion: 10
+Command: quit
+Goodbye!
+~~~
