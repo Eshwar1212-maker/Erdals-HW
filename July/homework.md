@@ -1,74 +1,85 @@
+# 🔥 ERDAL'S HOMEWORK — LEVEL UP SET
 
-# Challenge 1 — Environment Setup 🛠️
+## Problem 1: Grade Calculator 📊
 
-We just switched environments! Your code now lives in a shared repository with Eshwar — you are officially a collaborator. 🎉
-
-**But there's a catch:** virtual environments (`venv` folders) don't travel with the repository. They only exist on the machine that created them. So when you cloned the repo, your `Trivia-Project` folder came WITHOUT a working virtual environment — which means `solution.py` will crash when you try to run it (missing packages like `openai`, `dotenv`, etc).
-
-**Your mission:**
-1. Create a brand new virtual environment inside the `Trivia-Project` folder
-2. Activate it
-3. Reinstall the packages your project needs
-4. Get `solution.py` running again
-
-Use AI (ChatGPT/Claude) to help you if you get stuck
-
-You know you're done when: you can run `python solution.py` and the trivia game starts with no errors.
+Ask the user to enter student names and scores until they type "done". Store everything in a dictionary. Then print each student with their letter grade, plus the class average at the end.
 
 **Hints:**
-- `python -m venv venv` creates a virtual environment
-- Activating it is different on Windows vs Mac — look this up!
-- `pip install openai python-dotenv` gets your packages back
-- Don't forget: does your `.env` file with the API key exist in this folder? `.env` files also don't travel with repos (they're in `.gitignore` on purpose — never push API keys!)
-
-## Challenge 2: Word Frequency Counter 📝
-
-Ask the user to type a sentence. Count how many times each word appears and store it in a dictionary. Print the results sorted from most to least frequent.
-
-**Hints:**
-- Use `.split()` to break the sentence into words
-- Use `.lower()` to make it case-insensitive
-- Use `word_count[word] = word_count.get(word, 0) + 1` to count
-- Use `sorted()` with `key=lambda x: x[1], reverse=True` to sort
+- Use `while True:` with a `break` when input is "done"
+- Use `float()` to convert the score
+- Write a function `get_letter_grade(score)` that returns "A" (90+), "B" (80+), "C" (70+), "D" (60+), or "F"
+- Use `sum(scores.values()) / len(scores)` for the average
 
 **Expected Output:**
-```
-Enter a sentence: the cat sat on the mat the cat sat
+~~~
+Enter student name (or 'done'): Alice
+Enter score for Alice: 92
+Enter student name (or 'done'): Bob
+Enter score for Bob: 74
+Enter student name (or 'done'): Carol
+Enter score for Carol: 85
+Enter student name (or 'done'): done
+--- Report Card ---
+Alice: 92.0 (A)
+Bob: 74.0 (C)
+Carol: 85.0 (B)
+Class average: 83.67
+~~~
 
---- Word Frequencies ---
-the → 3
-cat → 2
-sat → 2
-on → 1
-mat → 1
+## Problem 2: Letter Frequency Analyzer 🔤
 
-```
-
-## Challenge 2(HARD): Blackjack Lite 🃏
-
-Build a simplified Blackjack game. The deck has cards with these values:
-
-```
-deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11] * 4
-```
-
-Shuffle the deck and deal 2 cards to the player and 2 to the dealer (dealer's second card is hidden). Each round, ask the player "Hit or stand?". If they hit, deal another card. If their total exceeds 21, they bust. When they stand, reveal the dealer's hidden card — the dealer must keep hitting until their total is 17 or more. Highest total without busting wins.
+Ask the user for a word or sentence. Count how many times each LETTER appears (ignore spaces, ignore case). Print the letters sorted from most to least frequent, and print a bar of `*` symbols next to each count.
 
 **Hints:**
-- Use `random.shuffle()` and `deck.pop()` to deal cards
-- Use `sum()` to get totals
-- Dealer logic goes in a `while` loop after the player stands
+- Loop through the string with `for char in text:`
+- Skip spaces with `if char == " ": continue`
+- Use `.get(char, 0) + 1` just like the word counter
+- Use `sorted()` with `key=lambda x: x[1], reverse=True`
+- Print the bar with `"*" * count`
 
 **Expected Output:**
-```
-Your cards: [10, 7] → Total: 17
-Dealer shows: [9, ?]
+~~~
+Enter text: hello world
+--- Letter Frequencies ---
+l → 3 ***
+o → 2 **
+h → 1 *
+e → 1 *
+w → 1 *
+r → 1 *
+d → 1 *
+~~~
 
-Hit or stand? hit
-You drew a 3 → Total: 20
+## Problem 3: Inventory Shop System 🛒
 
-Hit or stand? stand
-Dealer reveals: [9, 6] → Total: 15
-Dealer hits... draws 4 → Total: 19
+Start with this dictionary:
 
-Dealer wins! 🤖
+~~~python
+inventory = {"sword": 3, "shield": 5, "potion": 10}
+~~~
+
+Let the user type commands in a loop: `buy <item>`, `stock <item>`, `list`, or `quit`. Buying reduces the count by 1 (but not below 0 — print "Out of stock!" instead). `stock` shows the count for one item. `list` shows everything.
+
+**Hints:**
+- Use `.split()` to separate the command from the item name
+- Write a function `buy_item(inventory, item)` and a function `show_inventory(inventory)`
+- Check `if item in inventory:` before doing anything — print "Item not found!" otherwise
+- Use `while True:` and `break` on "quit"
+
+**Expected Output:**
+~~~
+Command: buy sword
+You bought a sword! 2 left.
+Command: buy axe
+Item not found!
+Command: stock potion
+potion: 10 in stock
+Command: buy sword
+You bought a sword! 1 left.
+Command: list
+sword: 1
+shield: 5
+potion: 10
+Command: quit
+Goodbye!
+~~~
