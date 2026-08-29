@@ -1,3 +1,10 @@
+
+## Project HW
+
+- Read up on ENV variables in google, and figure out how to add them correctly in your AI debate project folder, and what specific values to get. Use AI as well.
+
+-Figure out your virtual environment setup as well, use AI or google to confirm you have the correct virtual environment setup. 
+
 ## Task 1 — Dictionary Lookup
 
 Copy this into your file:
