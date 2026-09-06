@@ -10,7 +10,7 @@ def get_capital(country):
     "Canada": "Ottawa"
 }
     capital_title = country.strip().title()
-    return capitals.get(capital_title, "what is even that")
+    return capitals.get(capital_title, "aint a country")
 
 
 while True:
