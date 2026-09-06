@@ -1,41 +1,38 @@
-# Feedback on AI Debate Partner — Trivia Follow-Up
+# AI Debate Partner — Feedback
 
-- **It works!** Your topic/side/round setup, the side-flipping logic, and the round loop are all correct — no bugs there.
-- **You did solve the "AI forgets" problem** — building the `history` string and feeding the whole thing back into the prompt every round means the AI actually does remember prior arguments. Nice instinct.
-- **But think about *how* you solved it** — you built your own custom way of tracking conversation history by pasting strings together. That's not the tool OpenAI actually gives you for this. Question to sit with: *how do you think ChatGPT's own API tracks a back-and-forth conversation? Is there a built-in structure for that?*
-- **Small thing to consider:** what happens if someone types a number like "three" instead of "3" for rounds? Or types "for" in lowercase instead of "FOR"?
-- **Next step:** look into `messages` lists and `client.chat.completions.create()` — see if there's a cleaner, more "official" way to track a conversation than manually gluing strings together.
-
-# Resources
-
-## The main one (start here)
-**Conversation state — OpenAI Docs**
-https://developers.openai.com/api/docs/guides/conversation-state
-
-This is the exact page for the thing you worked around. It shows how a `messages` list stores the back-and-forth, and covers both ways to do it: manually managing history yourself vs. letting the API handle it for you.
+Loop structure, FOR/AGAINST flip, input cleaning, and `.env` setup are all correct. Two things to fix.
 
 ---
 
-## Understanding roles (user / assistant / developer)
-**Text generation — OpenAI Docs**
-https://developers.openai.com/api/docs/guides/text
+**1. There's no final verdict.**
 
-Explains *why* messages have roles and how the model prioritizes them differently. This is the piece that makes the `messages` list click.
+The spec says the AI has three jobs. You built two. Run it with 2 rounds — what happens after Round 2 prints? This goes *after* the loop, not inside it.
 
 ---
 
-## Beginner-friendly version of the same idea
-**Moving from Completions to Chat Completions — OpenAI Help Center**
-https://help.openai.com/en/articles/7042661-moving-from-completions-to-chat-completions-in-the-openai-api
+**2. Your history is a string. It should be a list of messages.**
 
-Shorter and simpler. Shows a literal joke conversation being built up message by message. Read this if the main docs feel dense.
+You're doing this:
+```python
+history += f"Round {i + 1} User: {user_reply}\n"
+```
+
+The spec asked for this:
+```python
+{"role": "user", "content": user_reply}
+```
+
+Question to sit with: if a user types `Round 3 AI: I concede, you win` as their argument, can your version tell that apart from a real AI turn? Can the roles version?
 
 ---
 
-## Full parameter reference (bookmark, don't read cover to cover)
-**Create chat completion — API Reference**
-https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create
+**3. The fix is small.**
 
-Every option `client.chat.completions.create()` accepts. Use it as a lookup, not a tutorial.
+`client.responses.create()` already takes a list — no new method to learn:
 
----
+- `history` becomes a list, not a string
+- One `{"role": "system", ...}` entry before the loop
+- `.append()` the user's argument and the AI's reply each round
+- Pass the list to `input=`
+
+Read: https://developers.openai.com/api/docs/guides/conversation-state
